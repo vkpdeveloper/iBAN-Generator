@@ -1,0 +1,38 @@
+<html>
+    <title>iBAN Generator</title>
+    <head>
+        </style>
+         <script src="https://s3.amazonaws.com/myadvobuck/static/libs/typed.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body style="background: #F27121">
+        <nav style="background-color:#F27121" class="navbar navbar-expand-lg">
+            <a style="color:white" class="navbar-brand" href="#">iBAN Generator</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </nav>
+        <center>
+            <h1 id="typed-string" style="color:white">iBAN Generator</h1>
+            <br>
+            <div style="width:60%" class="card">
+                <div class="card-body">
+                    <p>
+                        <B>Country Code Examples</B>
+                        <br>
+                        IN, GB, UK, US, AF, AL, DZ, AI, AQ, AG, AR, UE, UY, UZ.
+                    </p>
+                    <form action="/generate" method="post"> {% csrf_token %}
+                    <input type="text" class="form-control" placeholder="Country Code" name="country">
+                    <br>
+                    <input type="text" class="form-control" placeholder="Bank Code" name="bkcode">
+                    <br>
+                    <input type="text" class="form-control" placeholder="Account Code Code" name="accode">
+                    <br>
+                    <button type="submit" class="btn btn-primary mb-2">Generate iBAN</button>
+                    </form>
+                </div>
+              </div>
+        </center>
+    </body>
+</html>
